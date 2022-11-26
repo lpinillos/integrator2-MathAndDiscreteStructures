@@ -195,7 +195,8 @@ public class Dijkstra {
         E++;
     }
 
-    public void dijkstra(int s) {
+    public String dijkstra(int s) {
+        String msg = "";
         dist[s] = 0;
         for (int i = 0; i < V; i++) {
             if (i != s) {
@@ -217,6 +218,15 @@ public class Dijkstra {
                 }
             }
         }
+
+        for (int i = 0; i < V; i++) {
+            if (dist[i] != Integer.MAX_VALUE) {
+                msg += dist[i] + " ";
+            }
+        }
+
+        return msg;
+
     }
 
     public void printPath(int s, int v) {

@@ -39,6 +39,8 @@ public class Dijkstra {
 
     private String message = "";
 
+    private String message2 = "";
+
     // Make dijkstra algorithm with priority queue and that can print the path between two nodes
     public void dijkstra(Heap<Integer> heap, int[][] matrix, int source, int destination) {
         int[] distance = new int[matrix.length];
@@ -63,7 +65,9 @@ public class Dijkstra {
         }
 
         System.out.println("The shortest path between " + source + " and " + destination + " is: ");
+
         printPath(previous, destination);
+
         System.out.println("The distance is: " + distance[destination]);
 
         message = "The shortest path between " + source + " and " + destination + " is: ";
@@ -78,6 +82,14 @@ public class Dijkstra {
         this.message = message;
     }
 
+    public String getMessage2() {
+        return message2;
+    }
+
+    public void setMessage2(String message2) {
+        this.message2 = message2;
+    }
+
     // Print the path between two nodes
     public static void printPath(int[] previous, int destination) {
         if (previous[destination] != -1) {
@@ -85,6 +97,7 @@ public class Dijkstra {
         }
         System.out.print(destination + " ");
     }
+
 
     public static void main(String[] args) {
         Heap<Integer> heap = new Heap<>();

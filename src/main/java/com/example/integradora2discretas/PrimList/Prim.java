@@ -177,7 +177,8 @@ public class Prim {
 
     // Make prim with adjancency list and priority queue
 
-    public static void prim(Heap<Integer> heap, ArrayList<ArrayList<Integer>> adjList, ArrayList<ArrayList<Integer>> adjListWeight, int start) {
+    public static String prim(Heap<Integer> heap, ArrayList<ArrayList<Integer>> adjList, ArrayList<ArrayList<Integer>> adjListWeight, int start) {
+        String msg = "";
         int[] parent = new int[adjList.size()];
         int[] key = new int[adjList.size()];
         for (int i = 0; i < adjList.size(); i++) {
@@ -198,8 +199,10 @@ public class Prim {
             }
         }
         for (int i = 0; i < adjList.size(); i++) {
-            System.out.println(parent[i] + " " + i);
+            msg += parent[i] + " " + i;
         }
+
+        return msg;
     }
 
     public static void main(String[] args) {

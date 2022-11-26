@@ -65,6 +65,16 @@ public class GameController implements Initializable {
             position++;
             createGraph();
 
+            if(distanceLabel.getText().equals("2")){
+
+                answerTF.setText("");
+                Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("Be careful!!");
+                alert.setContentText("if you get the next answer wrong, the entire universe will be destroy!");
+                alert.showAndWait();
+
+            }
+
             if(distanceLabel.getText().equals("1")){
 
                 answerTF.setText("");
@@ -93,6 +103,20 @@ public class GameController implements Initializable {
             }else{
                 position += 10;
             }
+
+            if(distanceLabel.getText().equals("1")){
+
+                answerTF.setText("");
+                Alert alert2 = new Alert(Alert.AlertType.INFORMATION);
+                alert.setTitle("NOOOOOO!!!!!!");
+                alert.setContentText("MATHLACTUS DESTROY THE UNIVERSE, YOU COULD'NT SAVE US!");
+                alert.showAndWait();
+
+                Stage currentStage = (Stage) distanceLabel.getScene().getWindow();
+                currentStage.hide();
+
+            }
+
             createGraph();
 
         }
